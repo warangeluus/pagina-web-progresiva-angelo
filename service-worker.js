@@ -1,5 +1,5 @@
 /* Cache API guarda la interfaz e imágenes; IndexedDB guarda películas estructuradas. */
-const SHELL_CACHE = "cinehub-shell-v1";
+const SHELL_CACHE = "cinehub-shell-v2";
 const IMAGE_CACHE = "cinehub-images-v1";
 const APP_SHELL = ["./", "./index.html", "./styles.css", "./app.js", "./api.js", "./db.js", "./manifest.json", "./assets/icons/icon.svg", "./assets/icons/icon-192.png", "./assets/icons/icon-512.png"];
 
