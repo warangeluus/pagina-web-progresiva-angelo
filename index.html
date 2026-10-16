@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101116">
+  <meta name="description" content="Descubre películas, consulta sus detalles y guarda tus favoritas con CineHub.">
+  <title>CineHub — historias para descubrir</title>
+  <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="CineHub, inicio"><span class="brand-mark">C</span><span>Cine<span>Hub</span></span></a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#inicio" class="nav-link active" data-view="home">Inicio</a>
+      <a href="#peliculas" class="nav-link" data-view="movies">Películas</a>
+      <a href="#favoritos" class="nav-link" data-view="favorites">♡ Favoritos</a>
+      <a href="#acerca" class="nav-link" data-view="about">Acerca de</a>
+    </nav>
+    <div class="header-status"><span class="status-dot"></span><span id="connection-label">Conectando…</span></div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" id="hero" aria-label="Película destacada">
+      <div class="hero-shade"></div>
+      <div class="hero-content" id="hero-content"><span class="eyebrow">CINEHUB PRESENTA</span><h1>Historias que<br>merecen ser vistas.</h1><p>Descubre tu próxima película favorita.</p><a class="button button-primary" href="#peliculas">Explorar películas <span aria-hidden="true">→</span></a></div>
+      <div class="hero-credit" id="hero-credit">Una selección para ti</div>
+    </section>
+
+    <section class="discovery content-wrap" id="peliculas">
+      <div class="section-heading"><div><span class="eyebrow">ENCUENTRA TU PRÓXIMA HISTORIA</span><h2>Explora el catálogo</h2></div><span class="section-note">Miles de historias, una pantalla</span></div>
+      <form id="search-form" class="search-form" role="search"><label class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="¿Qué película estás buscando?" autocomplete="off" aria-label="Buscar películas"><button type="submit">Buscar</button></label></form>
+      <div class="section-heading results-heading"><div><span class="eyebrow" id="list-eyebrow">LO MÁS VISTO</span><h2 id="list-title">Películas populares</h2></div><span class="result-count" id="result-count"></span></div>
+      <div id="movie-grid" class="movie-grid" aria-live="polite"></div>
+      <div id="empty-state" class="empty-state" hidden><span class="empty-icon">✦</span><h3 id="empty-title">No encontramos películas</h3><p id="empty-copy">Prueba con otro título o vuelve a intentarlo cuando tengas conexión.</p></div>
+      <p class="attribution">Los datos e imágenes de películas son proporcionados por TMDB. CineHub no está afiliado ni respaldado por TMDB.</p>
+    </section>
+  </main>
+
+  <dialog id="movie-dialog" class="movie-dialog" aria-labelledby="detail-title"><button class="dialog-close" type="button" aria-label="Cerrar detalles">×</button><div id="detail-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <footer><a class="brand footer-brand" href="#inicio"><span class="brand-mark">C</span><span>Cine<span>Hub</span></span></a><p>Un buen film empieza con descubrirlo.</p><span>Catálogo académico · Datos de TMDB</span></footer>
+  <script src="config.js"></script>
+  <script src="api.js"></script>
+  <script src="db.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
